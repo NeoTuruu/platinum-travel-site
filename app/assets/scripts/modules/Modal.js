@@ -2,16 +2,16 @@ class Modal {
   constructor() {
     this.injectHTML();
     this.modal = document.querySelector(".modal");
-    this.openModalButtons = document.querySelectorAll(".open-modal");
+    // this.openModalButtons = document.querySelectorAll(".open-modal");
     this.closeIcon = document.querySelector(".modal__close");
     this.events();
   }
 
   events() {
     // Neeh tovchluur daragdsan esehiig ajiglah
-    this.openModalButtons.forEach((el) =>
-      el.addEventListener("click", (e) => this.openModal(e))
-    );
+    // this.openModalButtons.forEach((el) =>
+    //   el.addEventListener("click", (e) => this.openModal(e))
+    // );
     // Haah tovchluur daragdsan esehiig ajiglah
     this.closeIcon.addEventListener("click", () => this.closeModal());
     // Keyboard-s yamar negen  tovchluur daragdsan esehiig shalgah
@@ -23,10 +23,13 @@ class Modal {
       this.closeModal();
     }
   }
-  openModal(e) {
-    e.preventDefault();
+  openModal() {
     this.modal.classList.add("modal--is-visible");
   }
+  //   openModal(e) {
+  //     e.preventDefault();
+  //     this.modal.classList.add("modal--is-visible");
+  //   }
   closeModal() {
     this.modal.classList.remove("modal--is-visible");
   }
