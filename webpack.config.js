@@ -55,21 +55,20 @@ let config = {
 if (currentTask == "dev") {
   cssConfig.use.unshift("style-loader");
 
-  (config.output = {
+  config.output = {
     filename: "bundled.js",
     path: path.resolve(__dirname, "app"),
-  })(
-    (config.devServer = {
-      // before: function (app, server) {
-      //   server._watch("./app/**/*.html");
-      // },
-      static: path.join(__dirname, "app"),
-      hot: true,
-      port: 3000,
-      host: "0.0.0.0",
-    })
-  ),
-    (config.mode = "development");
+  };
+  config.devServer = {
+    // before: function (app, server) {
+    //   server._watch("./app/**/*.html");
+    // },
+    static: path.join(__dirname, "app"),
+    hot: true,
+    port: 3000,
+    host: "0.0.0.0",
+  };
+  config.mode = "development";
 }
 
 if (currentTask == "build") {
