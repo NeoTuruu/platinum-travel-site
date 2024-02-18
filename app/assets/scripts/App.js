@@ -6,6 +6,16 @@ import StickyHeader from "./modules/StickyHeader.js";
 import ClientArea from "./modules/ClientArea.js";
 // import Modal from "./modules/Modal.js";
 
+// end reat-tai holbootoi code bn
+import React from "react";
+import ReactDom from "react-dom";
+// uursdiin bichij ugsun react component-g import hiih
+import MyReactComponent from "./modules/MyReactComponent.js";
+
+ReactDom.render(
+  <MyReactComponent />,
+  document.querySelector("#my-react-example")
+);
 // object uusgey
 // new Modal();
 
