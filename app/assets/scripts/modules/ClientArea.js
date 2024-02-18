@@ -1,4 +1,4 @@
-pimport Axios from "axios";
+import Axios from "axios";
 class ClientArea {
   constructor() {
     this.injectHTML();
@@ -14,15 +14,17 @@ class ClientArea {
     });
   }
   sendRequest() {
-    Axios.post('https://loquacious-youtiao-3a3ecc.netlify.app/.netlify/functions/secret-page', 
-    {password:this.field.value})
-      .then(response=>{
+    Axios.post(
+      "https://loquacious-youtiao-3a3ecc.netlify.app/.netlify/functions/secret-page",
+      { password: this.field.value }
+    )
+      .then((response) => {
         this.form.remove();
-        this.contentArea.innerHTML=response.data;
+        this.contentArea.innerHTML = response.data;
       })
       .catch(() => {
         this.contentArea.innerHTML = `<p class="client-area__error>Таны оруулсан нууц үг буруу байна. Дахин оролдоно уу </p>`;
-        this.field.value="";
+        this.field.value = "";
         this.field.focus();
       });
   }
